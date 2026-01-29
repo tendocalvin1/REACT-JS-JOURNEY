@@ -1,11 +1,10 @@
 
 
-function Card() {
-    return(
-        <div>
-            <h3>Card Title</h3>
-            <p>This is a card component</p>
-        </div>
+function Card(){
+    return (
+        <>
+        <h2>This is a Card component</h2>
+        </>
     )
 }
 

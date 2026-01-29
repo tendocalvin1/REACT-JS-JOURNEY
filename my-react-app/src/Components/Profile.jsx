@@ -1,12 +1,10 @@
 
 
 function Profile(){
-    return(
+    return (
         <>
-        <h1>Tendo Calvin</h1>
-        <h2>Software Engineer with interests in Software development, Mobile Application
-            Development & Data Science
-        </h2>
+        <h1>User Profile</h1>
+        <p>This is the profile page</p>
         </>
     )
 }
