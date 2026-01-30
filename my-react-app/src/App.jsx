@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Navbar from './Components/Navbar';
 import Profile from './Components/Profile';
+import Greet from './Components/Greet';
 
 function App(){
   return(
@@ -12,6 +13,7 @@ function App(){
     <Header />
     <Navbar />
     <Profile />
+    <h2>{Greet("Darren Bent")}</h2>
     <Card />
     <Button />
     <Footer />

@@ -1,10 +1,12 @@
 
 
 function Profile(){
+    const name = "Tendo Calvin";
+    const role = "Full Stack Developer";
     return (
         <>
-        <h1>User Profile</h1>
-        <p>This is the profile page</p>
+        <h2>{name}</h2>
+        <p>{role}</p>
         </>
     )
 }
