@@ -1,22 +1,23 @@
 import React from 'react';
-import Header from './Components/Header';
+import Button from './Components/Button';
 import Card from './Components/Card';
 import Footer from './Components/Footer';
-import NavBar from './Components/NavBar';
+import Header from './Components/Header';
+import Navbar from './Components/Navbar';
 import Profile from './Components/Profile';
-import Button from './Components/Button';
-
+import Greet from './Components/Greet';
 
 function App(){
   return(
-    <div>
-      <NavBar />
-      <Profile />
-      <Header />
-      <Card />
-      <Button />
-      <Footer />
-    </div>
+    <>
+    <Header />
+    <Navbar />
+    <Profile />
+    <h2>{Greet("Darren Bent")}</h2>
+    <Card />
+    <Button />
+    <Footer />
+    </>
   )
 }
 

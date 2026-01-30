@@ -1,15 +1,17 @@
 
 
-function NavBar(){
+function Navbar(){
     return (
+        <>
         <nav>
             <ul>
                 <li>Home</li>
-                <li>About </li>
-                <li>Contact</li>
+                <li>About</li>
+                <li>Projects</li>
             </ul>
         </nav>
+        </>
     )
 }
 
-export default NavBar;
+export default Navbar;
