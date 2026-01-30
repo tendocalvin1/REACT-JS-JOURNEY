@@ -17,10 +17,44 @@ import React from 'react';
 // import MerciBeaucoup from './Components/MerciBeaucoup';
 
 
-import Card1 from './Components/Card1';
-import ProfileCard from './Components/ProfileCard';
+// import Card1 from './Components/Card1';
+// import ProfileCard from './Components/ProfileCard';
+import Cards from './Components/Cards';
 
 function App(){
+
+    const cards = [
+
+        {
+            id:1,
+            title: "Software Developer",
+            description: "Design both web and mobile apps",
+            buttonText: "Learn More",
+        },
+
+        {
+            id:2,
+            title: "Cloud Engineer",
+            description: "Deploy Applications to the web",
+            buttonText: "See More",
+        } ,
+
+        {
+            id:3,
+            title: "CyberSecurity Analyst",
+            description: "Protect systems against cyber attacks",
+            buttonText: "See my works",
+        } , 
+
+        {
+            id:4,
+            title: "Data Scientist",
+            description: "Design Predictive Models",
+            buttonText: "Learn More",
+        }
+    ]
+   
+   
   return(
     <>
     {/* <Header />
@@ -39,15 +73,32 @@ function App(){
     <Card />
     <Button />
     <Footer /> */}
-  <Card1 title="Full-stack developer" description="Building web and mobile applications" buttonText="Learn More"/>
+  {/* <Card1 title="Full-stack developer" description="Building web and mobile applications" buttonText="Learn More"/>
   <Card1 title="Content creator" description="Create content about what I have learnt" buttonText="See More"/>
   <Card1 title="Data Scientist" description="Analyzing Data with Python" buttonText="View Project"/>
   <ProfileCard  name="Tendo Calvin" role="Digital Marketer" button="Learn More"/>
   <ProfileCard  name="Sadio Mane" role="Footballer" button="Learn More"/>
-  <ProfileCard  name="Elon Musk" role="Software Engineer" button="Learn More"/>
+  <ProfileCard  name="Elon Musk" role="Software Engineer" button="Learn More"/> */}
+  
+        <div>
+            {cards.map((card)=>(
+                <Cards 
+                key={card.id}
+                title={card.title}
+                description={card.description}
+                buttonText={card.buttonText}
+                onButtonClick={()=>console.log(card.title)}
+                
+                
+                />
+            ))}
+        </div>
+       
+  
 
     </>
   )
 }
+
 
 export default App;
