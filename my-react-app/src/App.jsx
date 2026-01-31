@@ -29,6 +29,14 @@ import Movies from './Components/Movies';
 import Courses from './Components/Courses';
 import Student from './Components/Student';
 import Elective from './Components/Elective';
+import Counter from './Components/Counter';
+import Counter1 from './Components/Counter1';
+import NameInput from './Components/NameInput';
+import Toggle from './Components/Show';
+import Counter2 from './Components/Counter2';
+import Likes from './Components/Likes';
+import CharacterCounter from './Components/CharacterCounter';
+import DarkMode from './Components/DarkMode';
 
 function App(){
 
@@ -134,9 +142,14 @@ function App(){
   <ProfileCard  name="Tendo Calvin" role="Digital Marketer" button="Learn More"/>
   <ProfileCard  name="Sadio Mane" role="Footballer" button="Learn More"/>
   <ProfileCard  name="Elon Musk" role="Software Engineer" button="Learn More"/> */}
-
   <Student  user={{name:"Mumbere Brian", job:"Business man"}}/>
   <Elective  title="React JS" onEnroll={()=>console.log("Enrolled!")}/>
+    <NameInput />
+    <Toggle />
+    <CharacterCounter />
+    <DarkMode />
+    
+    
   
         <div>
             {cards.map((card)=>(
@@ -242,7 +255,13 @@ function App(){
                 />
                ))} 
             </div>
-
+    
+    <Counter />
+    <Counter />
+    <Counter />
+    <Counter1 />
+    <Counter2 />
+    <Likes />
 
     </>
   )
