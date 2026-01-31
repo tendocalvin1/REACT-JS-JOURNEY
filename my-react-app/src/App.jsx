@@ -20,9 +20,37 @@ import React from 'react';
 // import Card1 from './Components/Card1';
 // import ProfileCard from './Components/ProfileCard';
 import Cards from './Components/Cards';
+import UserCard from './Components/UserCard';
+import ProductCard from './Components/ProductCard';
+import MovieCard from './Components/MovieCard';
+import CourseCard from './Components/CourseCard';
 
 function App(){
 
+    const courses = [
+        {id: 1, title: "Software Construction", instructor:"Charles Muganga"},
+        {id: 1, title: "Digital Marketing", instructor:"Ankunda Doreen"},
+        {id: 1, title: "Very Large Scale Integration", instructor:"Sam Katwesigye"}
+    ]
+
+    const movies = [
+        {id:1 , name:"Lion King", year:2018},
+        {id:2 , name:"Sean Combs, The reckoning", year:2025},
+        {id:1 , name:"Assasins Creed", year:2009},
+        {id:1 , name:"Mr Bean's Holiday", year:2007}
+    ]
+
+    const products = [
+        {id:1 , title:"laptop", price:800},
+        {id:2 , title:"Phone", price:700},
+        {id:3 , title:"headphones", price:100},
+        {id:4 , title:"matress", price:50}
+    ]
+    const users =[
+        {id:1, name:"Nakayiza Davinah", job:"Medical Doctor"},
+        {id:2, name:"David Beckham", job:"Footballer"},
+        {id:3, name: "Elon Musk", job:"Business magnet"},
+    ]
     const cards = [
 
         {
@@ -93,8 +121,56 @@ function App(){
                 />
             ))}
         </div>
+
+        <div>
+            {users.map((user)=>(
+                <UserCard 
+                key={user.id}
+                name={user.name}
+                job={user.job}
+                
+                
+                />
+            ))}
+        </div>
        
-  
+       <div>
+
+        {products.map((product)=>(
+            <ProductCard 
+            key={product.id}
+            title={product.title}
+            price={product.price}
+            
+            />
+        ))}
+       </div>
+
+       <div>
+        {movies.map((movie)=>(
+            <MovieCard 
+            key={movie.id}
+            name={movie.name}
+            year={movie.year}
+
+            
+            />
+        ))}
+       </div>
+        
+
+        <div>
+
+            {courses.map((course)=>(
+                <CourseCard 
+                key={course.id}
+                title={course.title}
+                instructor={course.instructor}
+                
+                
+                />
+            ))}
+        </div>
 
     </>
   )
