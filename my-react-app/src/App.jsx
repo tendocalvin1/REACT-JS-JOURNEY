@@ -29,6 +29,8 @@ import Movies from './Components/Movies';
 import Courses from './Components/Courses';
 import Student from './Components/Student';
 import Elective from './Components/Elective';
+import Counter from './Components/Counter';
+import Counter1 from './Components/Counter1';
 
 function App(){
 
@@ -137,6 +139,7 @@ function App(){
 
   <Student  user={{name:"Mumbere Brian", job:"Business man"}}/>
   <Elective  title="React JS" onEnroll={()=>console.log("Enrolled!")}/>
+    
   
         <div>
             {cards.map((card)=>(
@@ -242,7 +245,9 @@ function App(){
                 />
                ))} 
             </div>
-
+    
+    <Counter />
+    <Counter1 />
 
     </>
   )
