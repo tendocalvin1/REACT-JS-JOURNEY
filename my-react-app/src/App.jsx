@@ -36,6 +36,7 @@ import Toggle from './Components/Show';
 import Counter2 from './Components/Counter2';
 import Likes from './Components/Likes';
 import CharacterCounter from './Components/CharacterCounter';
+import DarkMode from './Components/DarkMode';
 
 function App(){
 
@@ -141,12 +142,12 @@ function App(){
   <ProfileCard  name="Tendo Calvin" role="Digital Marketer" button="Learn More"/>
   <ProfileCard  name="Sadio Mane" role="Footballer" button="Learn More"/>
   <ProfileCard  name="Elon Musk" role="Software Engineer" button="Learn More"/> */}
-
   <Student  user={{name:"Mumbere Brian", job:"Business man"}}/>
   <Elective  title="React JS" onEnroll={()=>console.log("Enrolled!")}/>
     <NameInput />
     <Toggle />
     <CharacterCounter />
+    <DarkMode />
     
     
   
@@ -255,6 +256,8 @@ function App(){
                ))} 
             </div>
     
+    <Counter />
+    <Counter />
     <Counter />
     <Counter1 />
     <Counter2 />
