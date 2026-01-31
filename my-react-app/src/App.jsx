@@ -24,9 +24,34 @@ import UserCard from './Components/UserCard';
 import ProductCard from './Components/ProductCard';
 import MovieCard from './Components/MovieCard';
 import CourseCard from './Components/CourseCard';
+import StudentCard from './Components/StudentCard';
+import Movies from './Components/Movies';
+import Courses from './Components/Courses';
 
 function App(){
 
+    const subjects = [
+        {id:1, title:"Embedded Systems", instructor:"Diana", price:`$500`},
+        {id:1, title:"Machine Learning & AI", instructor:"Ssetuba James", price:`$600`},
+        {id:1, title:"Deep Learning", instructor:"Ian Raymond Osolo", price:`$450`},
+        {id:1, title:"CyberSecurity", instructor:"Catherine Bwire", price:`$725`}
+    ]
+
+    const dramas = [
+        {id:1, title:"bumble bee", year:2022, rating:8.5},
+        {id:2, title:"Home Alone", year:1994, rating:7},
+        {id:3, title:"Everybody hates Chris", year:2022, rating:5},
+        {id:1, title:"thundeman", year:2012, rating:6}
+    ]
+
+    const students = [
+        {id:1, name:"Tendo Calvin", age:24, course:"Computer Science"},
+        {id:2, name:"Absolom Junior", age:24, course:"Computer Science"},
+        {id:1, name:"Nankya Zahra Zinda", age:24, course:"Computer Science"},
+        {id:1, name:"Okidi Norbert", age:24, course:"Computer Science"},
+        {id:1, name:"Kisa Emmanuel", age:24, course:"Computer Science"},
+        {id:1, name:"Nabasa Isaac", age:24, course:"Computer Science"}
+    ]
     const courses = [
         {id: 1, title: "Software Construction", instructor:"Charles Muganga"},
         {id: 1, title: "Digital Marketing", instructor:"Ankunda Doreen"},
@@ -171,6 +196,48 @@ function App(){
                 />
             ))}
         </div>
+
+
+        <div>
+            {students.map((student)=>(
+                <StudentCard 
+                key={student.id}
+                name={student.name}
+                age={student.age}
+                course={student.course}
+                
+                
+                />
+            ))}
+        </div>
+
+            <div>
+                {dramas.map((drama)=>(
+                    <Movies 
+                    key={drama.id}
+                    title={drama.title}
+                    year={drama.year}
+                    rating={drama.rating}
+                    
+                    
+                    />
+                ))}
+            </div>
+
+
+            <div>
+               {subjects.map((subject)=>(
+                <Courses 
+                key={subject.id}
+                title={subject.title}
+                instructor={subject.instructor}
+                price={subject.price}
+                
+                
+                />
+               ))} 
+            </div>
+
 
     </>
   )
