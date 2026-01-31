@@ -27,6 +27,8 @@ import CourseCard from './Components/CourseCard';
 import StudentCard from './Components/StudentCard';
 import Movies from './Components/Movies';
 import Courses from './Components/Courses';
+import Student from './Components/Student';
+import Elective from './Components/Elective';
 
 function App(){
 
@@ -132,6 +134,9 @@ function App(){
   <ProfileCard  name="Tendo Calvin" role="Digital Marketer" button="Learn More"/>
   <ProfileCard  name="Sadio Mane" role="Footballer" button="Learn More"/>
   <ProfileCard  name="Elon Musk" role="Software Engineer" button="Learn More"/> */}
+
+  <Student  user={{name:"Mumbere Brian", job:"Business man"}}/>
+  <Elective  title="React JS" onEnroll={()=>console.log("Enrolled!")}/>
   
         <div>
             {cards.map((card)=>(
