@@ -31,6 +31,11 @@ import Student from './Components/Student';
 import Elective from './Components/Elective';
 import Counter from './Components/Counter';
 import Counter1 from './Components/Counter1';
+import NameInput from './Components/NameInput';
+import Toggle from './Components/Show';
+import Counter2 from './Components/Counter2';
+import Likes from './Components/Likes';
+import CharacterCounter from './Components/CharacterCounter';
 
 function App(){
 
@@ -139,6 +144,10 @@ function App(){
 
   <Student  user={{name:"Mumbere Brian", job:"Business man"}}/>
   <Elective  title="React JS" onEnroll={()=>console.log("Enrolled!")}/>
+    <NameInput />
+    <Toggle />
+    <CharacterCounter />
+    
     
   
         <div>
@@ -248,6 +257,8 @@ function App(){
     
     <Counter />
     <Counter1 />
+    <Counter2 />
+    <Likes />
 
     </>
   )
