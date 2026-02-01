@@ -41,6 +41,7 @@ import Names from './Components/Names';
 import Countries from './Components/Countries';
 import Jobs from './Components/Jobs';
 import ProductCard1 from './Components/ProductCard1';
+import Numbers from './Components/Numbers';
 
 function App(){
 
@@ -147,7 +148,7 @@ function App(){
         {id: 3, name:"Bible", price: `$3.5`},
         {id: 4, name:"fridge", price: `$100`},
     ]
-   
+
    
   return(
     <>
@@ -335,6 +336,9 @@ function App(){
                 />
             ))}
         </div>
+
+
+       
     
     <Counter />
     <Counter />
@@ -342,6 +346,7 @@ function App(){
     <Counter1 />
     <Counter2 />
     <Likes />
+    <Numbers />
 
     </>
   )
