@@ -37,6 +37,11 @@ import Counter2 from './Components/Counter2';
 import Likes from './Components/Likes';
 import CharacterCounter from './Components/CharacterCounter';
 import DarkMode from './Components/DarkMode';
+import Names from './Components/Names';
+import Countries from './Components/Countries';
+import Jobs from './Components/Jobs';
+import ProductCard1 from './Components/ProductCard1';
+import Numbers from './Components/Numbers';
 
 function App(){
 
@@ -116,7 +121,34 @@ function App(){
             buttonText: "Learn More",
         }
     ]
-   
+
+    const digits = [
+        {id: 1, numeral:"Cristiano Ronaldo"},
+        {id: 2, numeral:"Sadio Mane"},
+        {id: 3, numeral:"Mo Salah"},
+    ]
+
+    const territories = [
+        {id: 1, territory:"Portugal"},
+        {id: 2, territory:"Spain"},
+        {id: 3, territory:"Italy"},
+        {id: 4, territory:"France"},
+        {id: 5, territory:"Germany"},
+    ]
+
+    const roles = [
+        {id:1, title:"Plumber", description:"Repairing broken pipes and water leakages"},
+        {id:2, title:"House help", description:"Doing chores at a designated home"},
+        {id:3, title:"Mechanic", description:"Repair vehicles that have issues"}
+    ]
+
+    const valuables = [
+        // {id: 1, name:"notebook", price: `$5`},
+        {id: 2, name:"waterbottle", price: `$10`},
+        {id: 3, name:"Bible", price: `$3.5`},
+        {id: 4, name:"fridge", price: `$100`},
+    ]
+
    
   return(
     <>
@@ -255,6 +287,58 @@ function App(){
                 />
                ))} 
             </div>
+
+
+        <div>
+            {digits.map((digit)=>(
+                <Names 
+                key={digit.id}
+                numeral={digit.numeral}
+                
+                />
+            ))}
+        </div>
+
+
+        <div>
+            <ul>
+                <li>{territories.map((item)=>(
+                    <Countries 
+                    key={item.id}
+                    territory={item.territory}
+
+                    />
+                ))}</li>
+            </ul>
+        </div>
+
+
+        <div>
+            {roles.map((item)=>(
+                <Jobs 
+                key={item.id}
+                title={item.title}
+                description={item.description}
+
+                
+                />
+            ))}
+        </div>
+
+        <div>
+            {valuables.map((item)=>(
+                <ProductCard1 
+                key={item.id}
+                name={item.name}
+                price={item.price}
+                
+                
+                />
+            ))}
+        </div>
+
+
+       
     
     <Counter />
     <Counter />
@@ -262,6 +346,7 @@ function App(){
     <Counter1 />
     <Counter2 />
     <Likes />
+    <Numbers />
 
     </>
   )
