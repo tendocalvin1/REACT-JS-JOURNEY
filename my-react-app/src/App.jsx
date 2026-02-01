@@ -40,6 +40,7 @@ import DarkMode from './Components/DarkMode';
 import Names from './Components/Names';
 import Countries from './Components/Countries';
 import Jobs from './Components/Jobs';
+import ProductCard1 from './Components/ProductCard1';
 
 function App(){
 
@@ -138,6 +139,13 @@ function App(){
         {id:1, title:"Plumber", description:"Repairing broken pipes and water leakages"},
         {id:2, title:"House help", description:"Doing chores at a designated home"},
         {id:3, title:"Mechanic", description:"Repair vehicles that have issues"}
+    ]
+
+    const valuables = [
+        // {id: 1, name:"notebook", price: `$5`},
+        {id: 2, name:"waterbottle", price: `$10`},
+        {id: 3, name:"Bible", price: `$3.5`},
+        {id: 4, name:"fridge", price: `$100`},
     ]
    
    
@@ -311,6 +319,18 @@ function App(){
                 title={item.title}
                 description={item.description}
 
+                
+                />
+            ))}
+        </div>
+
+        <div>
+            {valuables.map((item)=>(
+                <ProductCard1 
+                key={item.id}
+                name={item.name}
+                price={item.price}
+                
                 
                 />
             ))}
