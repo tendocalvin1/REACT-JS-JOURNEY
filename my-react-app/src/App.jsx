@@ -50,6 +50,7 @@ import Text from './Components/Text';
 import Products from './Components/Products';
 import Hide from './Components/Hide';
 import Greeting from './Components/Greeting';
+import { useId } from 'react';
 
 function App(){
 
@@ -164,6 +165,26 @@ function App(){
         {id: 4, name:"Trent Alexander Arnold", occupation:"Footballer", aspiration:"Win a ballon dor"},
         {id: 5, name:"Erling Haaland", occupation:"Footballer", aspiration:"Win a world cup with Norway"}
     ]
+
+    const [items, setItems] = useState([
+        {id:1, name: "Benjamin Sesko", price:`$200`},
+        {id:2, name: "Brian Mbeumo", price:`$20000`},
+        {id:3, name: "Amad Diallo", price:`$150`},
+        {id:4, name: "Matheus Cunha", price:`$2.5`},
+    ])
+
+    // remove items from the array to change quantity
+    function removeButton(){
+        const upload = items.filter(item => item.id !== item);
+        setItems(upload)
+    }
+
+
+    // add items into the array to change quantity
+    function addButton (){
+        const add = items.pop(item => item.id);
+        setItems(add)
+    }
 
     // 1. state
     const [perishables, setPerishables] = useState([
@@ -398,6 +419,17 @@ function App(){
                     <h3>{item.name}</h3>
                     <p>{item.price}</p>
                     <button onClick={()=> DeleteItem(item.id)}>Delete</button>
+                </div>
+            ))}
+        </div>
+
+        <div>
+            {items.map((item)=>(
+                <div key={item.id} className='container'>
+                    <h3>{item.name}</h3>
+                    <p>{item.price}</p>
+                <button onClick={()=>removeButton(item.id)}>Remove</button>
+                <button onClick={()=>addButton(item.id)}>Add</button>
                 </div>
             ))}
         </div>
