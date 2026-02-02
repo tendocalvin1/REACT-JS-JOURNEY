@@ -45,6 +45,7 @@ import Numbers from './Components/Numbers';
 import Profiles from './Components/Profiles';
 import CounterList from './Components/CounterList';
 import Text from './Components/Text';
+import Products from './Components/Products';
 
 function App(){
 
@@ -158,6 +159,13 @@ function App(){
         {id: 3, name:"Ntale Kasaija Iguru", occupation:"Software Engineer", aspiration:"Build software for businesses"},
         {id: 4, name:"Trent Alexander Arnold", occupation:"Footballer", aspiration:"Win a ballon dor"},
         {id: 5, name:"Erling Haaland", occupation:"Footballer", aspiration:"Win a world cup with Norway"}
+    ]
+
+    const perishables = [
+        {id:1, name: "watch", price:`$200`},
+        {id:2, name: "Tesla", price:`$20000`},
+        {id:3, name: "Bible", price:`$150`},
+        {id:4, name: "cup", price:`$2.5`},
     ]
 
     const counters = [1,2,3,4,5]
@@ -366,6 +374,18 @@ function App(){
         <div>
             {counters.map((_, index)=>(
                 <CounterList  key={index}/>
+            ))}
+        </div>
+
+
+       <div>
+            {perishables.map((item)=>(
+                <div key={item.id} className="card">
+                    
+                    <h3>{item.name}</h3>
+                    <p>{item.price}</p>
+                    <button>Delete</button>
+                </div>
             ))}
         </div>
 
