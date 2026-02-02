@@ -48,6 +48,8 @@ import Profiles from './Components/Profiles';
 import CounterList from './Components/CounterList';
 import Text from './Components/Text';
 import Products from './Components/Products';
+import Hide from './Components/Hide';
+import Greeting from './Components/Greeting';
 
 function App(){
 
@@ -209,6 +211,8 @@ function App(){
     <Toggle />
     <CharacterCounter />
     <DarkMode />
+    <Hide />
+    <Greeting />
     
     
   
