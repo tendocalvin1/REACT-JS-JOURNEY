@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import React from 'react';
+
 // import Button from './Components/Button';
 // import Card from './Components/Card';
 // import Footer from './Components/Footer';
@@ -42,6 +44,12 @@ import Countries from './Components/Countries';
 import Jobs from './Components/Jobs';
 import ProductCard1 from './Components/ProductCard1';
 import Numbers from './Components/Numbers';
+import Profiles from './Components/Profiles';
+import CounterList from './Components/CounterList';
+import Text from './Components/Text';
+import Products from './Components/Products';
+import Hide from './Components/Hide';
+import Greeting from './Components/Greeting';
 
 function App(){
 
@@ -149,6 +157,29 @@ function App(){
         {id: 4, name:"fridge", price: `$100`},
     ]
 
+    const people = [
+        {id: 1, name:"Ronald Kasaija", occupation:"Software Developer", aspiration:"Building a start-up that solves a problem"},
+        {id: 2, name:"Kamara Kasaija", occupation:"Streamer", aspiration:"Becoming like Ishowspeed"},
+        {id: 3, name:"Ntale Kasaija Iguru", occupation:"Software Engineer", aspiration:"Build software for businesses"},
+        {id: 4, name:"Trent Alexander Arnold", occupation:"Footballer", aspiration:"Win a ballon dor"},
+        {id: 5, name:"Erling Haaland", occupation:"Footballer", aspiration:"Win a world cup with Norway"}
+    ]
+
+    // 1. state
+    const [perishables, setPerishables] = useState([
+        {id:1, name: "watch", price:`$200`},
+        {id:2, name: "Tesla", price:`$20000`},
+        {id:3, name: "Bible", price:`$150`},
+        {id:4, name: "cup", price:`$2.5`},
+    ])
+
+    // 2. functions (logic / handlers)
+    function DeleteItem(id){
+    const updated = perishables.filter(item => item.id !== id);
+    setPerishables(updated);
+  }
+
+    const counters = [1,2,3,4,5]
    
   return(
     <>
@@ -180,6 +211,8 @@ function App(){
     <Toggle />
     <CharacterCounter />
     <DarkMode />
+    <Hide />
+    <Greeting />
     
     
   
@@ -338,8 +371,38 @@ function App(){
         </div>
 
 
-       
-    
+        <div>
+            {people.map((item)=>(
+                <Profiles 
+                key={item.id}
+                name={item.name}
+                occupation={item.occupation}
+                aspiration={item.aspiration}
+                
+                />
+            ))}
+        </div>
+
+
+        <div>
+            {counters.map((_, index)=>(
+                <CounterList  key={index}/>
+            ))}
+        </div>
+
+
+       <div>
+            {perishables.map((item)=>(
+                <div key={item.id} className="card">
+                    
+                    <h3>{item.name}</h3>
+                    <p>{item.price}</p>
+                    <button onClick={()=> DeleteItem(item.id)}>Delete</button>
+                </div>
+            ))}
+        </div>
+
+    <Text />
     <Counter />
     <Counter />
     <Counter />
