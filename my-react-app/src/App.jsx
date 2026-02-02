@@ -42,6 +42,9 @@ import Countries from './Components/Countries';
 import Jobs from './Components/Jobs';
 import ProductCard1 from './Components/ProductCard1';
 import Numbers from './Components/Numbers';
+import Profiles from './Components/Profiles';
+import CounterList from './Components/CounterList';
+import Text from './Components/Text';
 
 function App(){
 
@@ -149,6 +152,15 @@ function App(){
         {id: 4, name:"fridge", price: `$100`},
     ]
 
+    const people = [
+        {id: 1, name:"Ronald Kasaija", occupation:"Software Developer", aspiration:"Building a start-up that solves a problem"},
+        {id: 2, name:"Kamara Kasaija", occupation:"Streamer", aspiration:"Becoming like Ishowspeed"},
+        {id: 3, name:"Ntale Kasaija Iguru", occupation:"Software Engineer", aspiration:"Build software for businesses"},
+        {id: 4, name:"Trent Alexander Arnold", occupation:"Footballer", aspiration:"Win a ballon dor"},
+        {id: 5, name:"Erling Haaland", occupation:"Footballer", aspiration:"Win a world cup with Norway"}
+    ]
+
+    const counters = [1,2,3,4,5]
    
   return(
     <>
@@ -338,8 +350,26 @@ function App(){
         </div>
 
 
-       
-    
+        <div>
+            {people.map((item)=>(
+                <Profiles 
+                key={item.id}
+                name={item.name}
+                occupation={item.occupation}
+                aspiration={item.aspiration}
+                
+                />
+            ))}
+        </div>
+
+
+        <div>
+            {counters.map((_, index)=>(
+                <CounterList  key={index}/>
+            ))}
+        </div>
+
+    <Text />
     <Counter />
     <Counter />
     <Counter />
