@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import React from 'react';
+
 // import Button from './Components/Button';
 // import Card from './Components/Card';
 // import Footer from './Components/Footer';
@@ -161,12 +163,19 @@ function App(){
         {id: 5, name:"Erling Haaland", occupation:"Footballer", aspiration:"Win a world cup with Norway"}
     ]
 
-    const perishables = [
+    // 1. state
+    const [perishables, setPerishables] = useState([
         {id:1, name: "watch", price:`$200`},
         {id:2, name: "Tesla", price:`$20000`},
         {id:3, name: "Bible", price:`$150`},
         {id:4, name: "cup", price:`$2.5`},
-    ]
+    ])
+
+    // 2. functions (logic / handlers)
+    function DeleteItem(id){
+    const updated = perishables.filter(item => item.id !== id);
+    setPerishables(updated);
+  }
 
     const counters = [1,2,3,4,5]
    
@@ -384,7 +393,7 @@ function App(){
                     
                     <h3>{item.name}</h3>
                     <p>{item.price}</p>
-                    <button>Delete</button>
+                    <button onClick={()=> DeleteItem(item.id)}>Delete</button>
                 </div>
             ))}
         </div>
