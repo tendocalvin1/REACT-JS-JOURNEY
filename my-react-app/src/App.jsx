@@ -51,6 +51,9 @@ import Products from './Components/Products';
 import Hide from './Components/Hide';
 import Greeting from './Components/Greeting';
 import TabsComponent from './Components/TabsComponent';
+import People from './Components/Cards2';
+import CountList from './Components/CountList';
+
 
 function App(){
 
@@ -201,7 +204,15 @@ function App(){
   }
 
     const counters = [1,2,3,4,5]
+
+    const persons = [
+        {id:1, name:"Lucky Mbabazi", age:24},
+        {id:2, name:"Robert Pires", age:48},
+        {id:3, name:"Thierry Henry", age:49},
+        {id:4, name:"Jamie Carragher", age:48}
+    ]
    
+    const nums = [1,2,3,4,5]
   return(
     <>
     {/* <Header />
@@ -435,6 +446,29 @@ function App(){
             ))}
         </div>
 
+        <div>
+            {persons.map((item)=>(
+                <People 
+                key={item.id}
+                name={item.name}
+                age={item.age}
+                
+                />
+            ))}
+        </div>
+
+
+        <div>
+            {nums.map((item, index)=>(
+                <CountList 
+                key={index}
+                
+                />
+            ))}
+        </div>
+
+
+    
     <Text />
     <Counter />
     <Counter />
