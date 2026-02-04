@@ -50,7 +50,7 @@ import Text from './Components/Text';
 import Products from './Components/Products';
 import Hide from './Components/Hide';
 import Greeting from './Components/Greeting';
-import { useId } from 'react';
+import TabsComponent from './Components/TabsComponent';
 
 function App(){
 
@@ -234,6 +234,7 @@ function App(){
     <DarkMode />
     <Hide />
     <Greeting />
+    <TabsComponent />
     
     
   

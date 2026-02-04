@@ -4,42 +4,36 @@
 // Clicking shows different content.
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sections</title>
-</head>
-<body>
-    <header>
-        <nav>
-        <ul>
-            <a href="#home"><li>Home</li></a>
-            <a href="#about"><li>About</li></a>
-            <a href="#contact"><li>Contact</li></a>
-        </ul>
-    </nav>
-    </header>
-   
-    <main>
-    <section id="home">
+import React from 'react';
+import {useState} from 'react';
 
-    </section>
+const TabsComponent =()=>{
+ 
+    const [activeTab, setActiveTab] = useState("home")
 
-    <section id="about">
-        
-    </section>
+    return(
+        <div>
+            <div>
 
-    <section id="contact">
-        
-    </section>
+            <button onClick={()=> setActiveTab("home")}>Home</button>
+            <button onClick={()=> setActiveTab("about")}>About</button>
+            <button onClick={()=> setActiveTab("contact")}>Contact</button>
 
-    </main>
+            </div>
 
+            <div>
+                {activeTab === 'home' && <h2>Welcome to the home page</h2>}
+                {activeTab === 'about' && 
+                (<p>My name is Tendo Calvin and I am a software Engineer by profession with interests in
+            web development and mobile app development. I love learning new technologies and building projects
+            that solve real-world problems. Addition in the longer term, I aspire to become an expert in
+            artificial intelligence and machine learning as well as content creation.</p>)}
 
-    <footer>
+                {activeTab === 'contact' && <h2>Contact: email@example.com</h2>}
+            </div>
 
-    </footer>
-</body>
-</html>
+        </div>
+    )
+}
+
+export default TabsComponent;
