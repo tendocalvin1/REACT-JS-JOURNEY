@@ -5,12 +5,12 @@
 import React from "react";
 import { useState } from "react";
 
-const CountList = ({number})=>{
-    const [count, setCount] = useState()
+const CountList = ()=>{
+    const [count, setCount] = useState(0)
 
     return(
         <div className="card">
-            <h3>{number}</h3>
+            <h3>{count}</h3>
             <button onClick={()=>setCount(count + 1)}>Add</button>
         </div>
     )

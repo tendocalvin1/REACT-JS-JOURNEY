@@ -53,6 +53,8 @@ import Greeting from './Components/Greeting';
 import TabsComponent from './Components/TabsComponent';
 import People from './Components/Cards2';
 import CountList from './Components/CountList';
+import TextChange from './Components/TextChange';
+import CarList from './Components/Lists';
 
 
 function App(){
@@ -213,6 +215,13 @@ function App(){
     ]
    
     const nums = [1,2,3,4,5]
+
+    const vehicles = [
+        {id:1, car:"MayBech", brand:"Mercedes"},
+        {id:2, car:"Land Cruiser", brand:"Toyota"},
+        {id:3, car:"Lamborghini Urus", brand:"Lamborghini"},
+        {id:4, car:"Mercedes ML Sport", brand:"Mercedes"}
+    ]
   return(
     <>
     {/* <Header />
@@ -459,7 +468,7 @@ function App(){
 
 
         <div>
-            {nums.map((item, index)=>(
+            {nums.map((_, index)=>(
                 <CountList 
                 key={index}
                 
@@ -468,7 +477,20 @@ function App(){
         </div>
 
 
-    
+        <div>
+            {vehicles.map((item)=>(
+                <CarList 
+                key={item.id}
+                car = {item.car}
+                brand = {item.brand}
+                
+                
+                />
+            ))}
+        </div>
+
+
+    <TextChange />
     <Text />
     <Counter />
     <Counter />
