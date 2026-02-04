@@ -50,7 +50,12 @@ import Text from './Components/Text';
 import Products from './Components/Products';
 import Hide from './Components/Hide';
 import Greeting from './Components/Greeting';
-import { useId } from 'react';
+import TabsComponent from './Components/TabsComponent';
+import People from './Components/Cards2';
+import CountList from './Components/CountList';
+import TextChange from './Components/TextChange';
+import CarList from './Components/Lists';
+
 
 function App(){
 
@@ -201,7 +206,22 @@ function App(){
   }
 
     const counters = [1,2,3,4,5]
+
+    const persons = [
+        {id:1, name:"Lucky Mbabazi", age:24},
+        {id:2, name:"Robert Pires", age:48},
+        {id:3, name:"Thierry Henry", age:49},
+        {id:4, name:"Jamie Carragher", age:48}
+    ]
    
+    const nums = [1,2,3,4,5]
+
+    const vehicles = [
+        {id:1, car:"MayBech", brand:"Mercedes"},
+        {id:2, car:"Land Cruiser", brand:"Toyota"},
+        {id:3, car:"Lamborghini Urus", brand:"Lamborghini"},
+        {id:4, car:"Mercedes ML Sport", brand:"Mercedes"}
+    ]
   return(
     <>
     {/* <Header />
@@ -234,6 +254,7 @@ function App(){
     <DarkMode />
     <Hide />
     <Greeting />
+    <TabsComponent />
     
     
   
@@ -434,6 +455,42 @@ function App(){
             ))}
         </div>
 
+        <div>
+            {persons.map((item)=>(
+                <People 
+                key={item.id}
+                name={item.name}
+                age={item.age}
+                
+                />
+            ))}
+        </div>
+
+
+        <div>
+            {nums.map((_, index)=>(
+                <CountList 
+                key={index}
+                
+                />
+            ))}
+        </div>
+
+
+        <div>
+            {vehicles.map((item)=>(
+                <CarList 
+                key={item.id}
+                car = {item.car}
+                brand = {item.brand}
+                
+                
+                />
+            ))}
+        </div>
+
+
+    <TextChange />
     <Text />
     <Counter />
     <Counter />
