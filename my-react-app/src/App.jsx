@@ -55,6 +55,9 @@ import People from './Components/Cards2';
 import CountList from './Components/CountList';
 import TextChange from './Components/TextChange';
 import CarList from './Components/Lists';
+import Visibility from './Components/Visibility';
+import DynamicGreeting from './Components/DynamicGreeting';
+import Theme from './Components/Theme';
 
 
 function App(){
@@ -250,12 +253,14 @@ function App(){
   <Elective  title="React JS" onEnroll={()=>console.log("Enrolled!")}/>
     <NameInput />
     <Toggle />
+    <Visibility />
     <CharacterCounter />
     <DarkMode />
     <Hide />
     <Greeting />
     <TabsComponent />
-    
+    <DynamicGreeting />
+    <Theme />
     
   
         <div>
