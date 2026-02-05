@@ -8,27 +8,27 @@
 // An onChange handler updates this state as the user types.
 // The UI reflects the current state by displaying a greeting with the entered name.
 
-
 import React from "react";
 import { useState } from "react";
 
 
 const DynamicGreeting =()=>{
-   const [name, setName] = useState('') 
+    const [name, setName] = useState('')
 
-   
 
     return(
         <div className="container">
+            <h3>Hello ,{name || 'there'}</h3>
             <input 
             placeholder="Enter your name please"
             type="text"
-            value={name}
-            onChange={(e)=> setName(e.target.value)}
-            required 
+            onChange={(e)=>setName(e.target.value)}
+            required
+
+            
             />
 
-            <p>Hello {name || 'there'}</p>
+            
         </div>
     )
 }
