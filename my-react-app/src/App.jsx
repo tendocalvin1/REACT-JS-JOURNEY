@@ -57,6 +57,7 @@ import TextChange from './Components/TextChange';
 import CarList from './Components/Lists';
 import Visibility from './Components/Visibility';
 import DynamicGreeting from './Components/DynamicGreeting';
+import Theme from './Components/Theme';
 
 
 function App(){
@@ -259,7 +260,7 @@ function App(){
     <Greeting />
     <TabsComponent />
     <DynamicGreeting />
-    
+    <Theme />
     
   
         <div>
